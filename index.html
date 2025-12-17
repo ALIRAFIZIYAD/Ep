@@ -407,15 +407,10 @@
         window.firebaseDB = db;
     </script>
     
-    <!-- User ID Display (MANDATORY for multi-user apps) -->
-    <div class="fixed top-0 right-0 p-2 text-xs bg-light-card text-gray-800 rounded-bl-lg shadow-xl z-50 border-b border-l border-gray-200">
-        User ID: <span id="user-id-display" class="font-mono text-primary">N/A</span>
+    <!-- User ID Display (for debugging) -->
+    <div class="fixed bottom-5 left-5 bg-white p-2 rounded shadow text-xs z-40">
+        User ID: <span id="user-id-display">loading...</span>
     </div>
-
-    <!-- Dark Mode Toggle -->
-    <button id="darkModeToggle" class="fixed top-20 right-0 p-2 bg-gray-800 text-white rounded-l-lg shadow-xl z-50 transition-all duration-300">
-        <i class="fas fa-moon"></i>
-    </button>
 
     <!-- Back to Top Button -->
     <button id="backToTop" class="transition-all duration-300">
@@ -682,8 +677,8 @@
             </div>
         </section>
 
-        <!-- Services Section -->
-        <section id="services" class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900">
+        <!-- Service Details Section -->
+        <section id="service-details" class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900">
             <div class="max-w-7xl mx-auto text-center">
                 <!-- Accent element above title -->
                 <div class="w-10 h-1 bg-accent-green mx-auto rounded-full mb-2"></div>
@@ -749,14 +744,6 @@
                 </div>
             </div>
         </section>
-
-
-
-       
-
-       
-
-
 
         <!-- Our Team Section -->
         <section id="team" class="py-20 px-4 sm:px-6 lg:px-8 bg-light-bg text-center">
@@ -1033,27 +1020,89 @@
             </div>
         </section>
 
+        <!-- Blog Section -->
+        <section id="blog" class="py-20 px-4 sm:px-6 lg:px-8 bg-light-bg">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16">
+                    <p class="text-gray-600 font-medium tracking-widest uppercase text-sm mb-2">Latest News</p>
+                    <h2 class="text-4xl font-extrabold text-gray-900 uppercase">FROM OUR BLOG</h2>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Blog Post 1 -->
+                    <div class="blog-card bg-white rounded-xl overflow-hidden shadow-lg" data-aos="fade-up" data-aos-delay="100">
+                        <img src="https://placehold.co/600x400/4f46e5/ffffff?text=Blog+Post+1" alt="Blog Post 1" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <div class="flex items-center text-sm text-gray-500 mb-2">
+                                <i class="far fa-calendar mr-2"></i>
+                                <span>May 15, 2023</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-3">The Future of Brand Design in Digital Age</h3>
+                            <p class="text-gray-600 mb-4">Exploring how digital transformation is reshaping brand identity and design strategies for modern businesses.</p>
+                            <a href="#" class="text-primary font-semibold flex items-center group">
+                                Read More 
+                                <svg class="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Blog Post 2 -->
+                    <div class="blog-card bg-white rounded-xl overflow-hidden shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                        <img src="https://placehold.co/600x400/f43f5e/ffffff?text=Blog+Post+2" alt="Blog Post 2" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <div class="flex items-center text-sm text-gray-500 mb-2">
+                                <i class="far fa-calendar mr-2"></i>
+                                <span>May 10, 2023</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-3">Color Psychology in Logo Design</h3>
+                            <p class="text-gray-600 mb-4">Understanding how different colors evoke emotions and influence consumer perception in logo design.</p>
+                            <a href="#" class="text-primary font-semibold flex items-center group">
+                                Read More 
+                                <svg class="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Blog Post 3 -->
+                    <div class="blog-card bg-white rounded-xl overflow-hidden shadow-lg" data-aos="fade-up" data-aos-delay="300">
+                        <img src="https://placehold.co/600x400/84cc16/ffffff?text=Blog+Post+3" alt="Blog Post 3" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <div class="flex items-center text-sm text-gray-500 mb-2">
+                                <i class="far fa-calendar mr-2"></i>
+                                <span>May 5, 2023</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-3">Responsive Web Design Best Practices</h3>
+                            <p class="text-gray-600 mb-4">Key principles and techniques for creating websites that look great on all devices and screen sizes.</p>
+                            <a href="#" class="text-primary font-semibold flex items-center group">
+                                Read More 
+                                <svg class="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Hero Section: Updated to match the provided image -->
-<section class="relative h-[80vh] flex items-center justify-center overflow-hidden">
-    <!-- Background Color: Dark Blue -->
-    <div class="absolute inset-0 z-0 bg-gray-900"></div>
-    
-    <div class="relative z-10 max-w-4xl px-4 text-center" data-aos="fade-up">
-        <!-- Large Heading: Updated to match image text -->
-        <h1 class="text-4xl sm:text-6xl font-extrabold leading-none text-white mb-10">
-            CP CREATIVES GIVE THE SMART SOLUTION FOR YOUR BUSINESS
-        </h1>
-        
-        <!-- Green Oval Button: Updated to match image button -->
-        <a href="#contact" class="inline-block px-8 py-4 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-full shadow-xl transition-colors duration-300">
-            GET A QUOTE
-        </a>
-    </div>
-</section>
+        <section class="relative h-[80vh] flex items-center justify-center overflow-hidden">
+            <!-- Background Color: Dark Blue -->
+            <div class="absolute inset-0 z-0 bg-gray-900"></div>
+            
+            <div class="relative z-10 max-w-4xl px-4 text-center" data-aos="fade-up">
+                <!-- Large Heading: Updated to match image text -->
+                <h1 class="text-4xl sm:text-6xl font-extrabold leading-none text-white mb-10">
+                    EP CREATIVES GIVE THE SMART SOLUTION FOR YOUR BUSINESS
+                </h1>
+                
+                <!-- Green Oval Button: Updated to match image button -->
+                <a href="#contact" class="inline-block px-8 py-4 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-full shadow-xl transition-colors duration-300">
+                    GET A QUOTE
+                </a>
+            </div>
+        </section>
+    </main>
 
-        
-
-    <!-- Footer: Detailed Dark Version (Replaced previous simple footer) -->
+    <!-- Footer: Detailed Dark Version -->
     <footer class="bg-footer-dark text-gray-300 py-16 px-4 sm:px-6 lg:px-8">
         <div class="max-w-7xl mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12 border-b border-gray-700 pb-12">
@@ -1123,7 +1172,7 @@
                     <p id="newsletterMessage" class="text-xs text-gray-400 mt-2"></p>
                 </div>
 
-                <!-- Column 4: Gallery Placeholder (Kept for layout fidelity based on similar designs) -->
+                <!-- Column 4: Gallery Placeholder -->
                 <div>
                      <h4 class="text-lg font-bold text-white uppercase mb-4">GALLERY</h4>
                      <div class="grid grid-cols-3 gap-2">
@@ -1201,33 +1250,6 @@
                 link.addEventListener('click', () => {
                     menu.classList.add('hidden');
                 });
-            });
-            
-            // Dark mode toggle
-            const darkModeToggle = document.getElementById('darkModeToggle');
-            const body = document.body;
-            const darkModeIcon = darkModeToggle.querySelector('i');
-            
-            // Check for saved dark mode preference
-            const savedDarkMode = localStorage.getItem('darkMode');
-            if (savedDarkMode === 'true') {
-                body.classList.add('dark');
-                darkModeIcon.classList.remove('fa-moon');
-                darkModeIcon.classList.add('fa-sun');
-            }
-            
-            darkModeToggle.addEventListener('click', () => {
-                body.classList.toggle('dark');
-                
-                if (body.classList.contains('dark')) {
-                    darkModeIcon.classList.remove('fa-moon');
-                    darkModeIcon.classList.add('fa-sun');
-                    localStorage.setItem('darkMode', 'true');
-                } else {
-                    darkModeIcon.classList.remove('fa-sun');
-                    darkModeIcon.classList.add('fa-moon');
-                    localStorage.setItem('darkMode', 'false');
-                }
             });
             
             // Back to top button
